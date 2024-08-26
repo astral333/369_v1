@@ -10,9 +10,9 @@ class Actividad {
 let actividades = [];
 let siguienteId = 1; //para asignar IDs únicos
 // funciones del DOM para crear elementos HTML
-function crearElementoLista(actividad) {
+function crearElementoLista(actividad,id) {
     const li = document.createElement('li');
-    li.dataset.id =actividad.id; //almacenar el ID en el elemento
+    li.dataset.id =id; //almacenar el ID en el elemento
     const img = document.createElement('img');
     img.src = actividad.imagen;
     img.alt = actividad.nombre;
@@ -36,8 +36,8 @@ function crearElementoLista(actividad) {
 function mostrarActividades() {
     const listaActividades = document.getElementById('actividades');
     listaActividades.innerHTML = ''; // Limpia lista
-    actividades.forEach(actividad =>{
-        const li = crearElementoLista(actividad);
+    actividades.forEach((actividad,id) =>{
+        const li = crearElementoLista(actividad,id);
         listaActividades.appendChild(li);
     });
 }
@@ -52,8 +52,14 @@ function agregarActividad() {
     mostrarActividades();
     limpiarFormulario();
 }
-function erditarActividad(id) {
-    
+function editarActividad(id) {
+    // llenamos el formulario con los datos de la activiadad
+    // cambiar el texto del boton Agregar a Guardar CAmbios
+    // agregar un listener temporal al boton Guardar Cambios
+    //actualizar los datos de la actividad
+    // volver a mostrar la lista actualizada
+    // limpiar formulario
+    // restaurar el texto del boton y remover el event listener temporal
 }
 function eliminarActividad(id) {
     actividades = actividades.filter(actividad => actividad.id !== id);
