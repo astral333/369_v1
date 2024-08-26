@@ -24,6 +24,7 @@ function crearElementoLista(actividad) {
     editarBtm.textContent = 'Editar';
     editarBtm.addEventListener('click',()=>editarActividad(actividad.id));
     const eliminarBtm = document.createElement('button');
+    eliminarBtm.textContent = 'Eliminar'
     eliminarBtm.addEventListener('click',()=> eliminarActividad(actividad.id));
     li.appendChild(img);
     li.appendChild(h3);
